@@ -4,7 +4,7 @@ from database import  SessionLocal
 from sqlalchemy.orm import  Session
 import models.user
 from dto.auth import LoginRequest
-from dto.user import UserRequest
+from dto.auth import UserRequest
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 
