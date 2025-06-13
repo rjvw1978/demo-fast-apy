@@ -1,0 +1,45 @@
+# Entornos virtuales
+env/
+venv/
+.env
+
+# Archivos de configuración y secretos
+*.env
+*.env.*
+
+# Archivos de Python compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Cachés y logs
+*.log
+*.sqlite3
+*.db
+*.pid
+*.gz
+*.coverage
+.coverage.*
+.cache/
+.pytest_cache/
+htmlcov/
+
+# VSCode
+.vscode/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# Archivos de distribución
+dist/
+build/
+*.egg-info/
+
+# Otros
+*.zip
+*.tar.gz
+
+test.db
