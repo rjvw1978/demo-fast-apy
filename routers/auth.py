@@ -3,6 +3,7 @@ from typing import List, Annotated
 from database import  SessionLocal
 from sqlalchemy.orm import  Session
 import models.user
+from dto.auth import LoginRequest
 from dto.user import UserRequest
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
@@ -17,12 +18,12 @@ def get_db():
 db_dependency = Annotated[Session, Depends(get_db)]
 
 @router.post("/login")
-def login(email: str, password: str, db: db_dependency):
-    user = db.query(models.user.User).filter(models.user.User.email == email).first()
+def login(request:LoginRequest, db: db_dependency):
+    user = db.query(models.user.User).filter(models.user.User.email == request.email).first()
     if user is None:
         raise HTTPException(status_code=404, detail="User not found")
     
-    if user.password != password:
+    if user.password != request.password:
         raise HTTPException(status_code=401, detail="Incorrect password")
     
     return {"message": "Login successful", "user_id": user.id}
