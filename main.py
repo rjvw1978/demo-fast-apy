@@ -8,12 +8,12 @@ app = FastAPI()
 
 origins = [
     "http://localhost:4200",
-    "https://angular-demo-2841c.web.app"
+    "https://app-angular-d8278.web.app/"
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,            # Orígenes permitidos
+    allow_origins=["*"],            # Orígenes permitidos
     allow_credentials=True,           # Permitir cookies/autenticación
     allow_methods=["*"],              # Métodos HTTP permitidos
     allow_headers=["*"],              # Headers permitidos
