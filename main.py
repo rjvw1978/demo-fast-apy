@@ -7,7 +7,8 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins = [
-    "http://localhost:4200"
+    "http://localhost:4200",
+    "https://angular-demo-2841c.web.app"
 ]
 
 app.add_middleware(
